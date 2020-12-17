@@ -5,7 +5,7 @@ import { basename } from 'path'
 import { rreaddir } from './utils/rreaddir'
 import { Bot, CommandObj } from './utils/types'
 import { pathfinder } from 'mineflayer-pathfinder'
-import { plugin } from 'mineflayer-collectblock'
+import { plugin as collectBlock } from 'mineflayer-collectblock'
 
 const local = true
 const options: BotOptions = {
@@ -50,7 +50,7 @@ bot.once('spawn', async () => {
       bot.setControlState('sneak', false)
     }, 100)
   }, 100)
-}).loadPlugins([pathfinder, plugin])
+}).loadPlugins([pathfinder, collectBlock])
 // Load in events
 readdirSync('./events/')
   .filter(name => name.endsWith('.js'))
