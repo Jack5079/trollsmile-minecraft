@@ -7,6 +7,7 @@ function getPlayer (bot: Bot, args: string[]): Player | void {
 }
 export async function run (this: Bot, message: Message, args: string[]): Promise<string | void> {
   await new Promise(resolve => this.collectBlock.cancelTask(resolve))
+  this.pvp.stop()
   if (!this.pathfinder.isMoving()) {
     // this.entity.position = message.author.entity.position.offset(0, 255, 0)
     // const p = message.author.entity.position
