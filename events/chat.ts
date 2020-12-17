@@ -8,7 +8,7 @@ export default async function (this: Bot, username: string, msg: string) {
   }
 
   // When a message is sent
-  if (message.author.username === this.username) return
+  if (message.author?.username === this.username) return
 
   const prefix = '-' // bot prefix
 

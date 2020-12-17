@@ -5,6 +5,7 @@ import { basename } from 'path'
 import { rreaddir } from './utils/rreaddir'
 import { Bot, CommandObj } from './utils/types'
 import { pathfinder } from 'mineflayer-pathfinder'
+import { Vec3 } from 'vec3'
 
 const local = true
 const options: BotOptions = {
@@ -23,6 +24,7 @@ bot.options = options
 bot.setMaxListeners(Infinity)
 
 bot.once('spawn', async () => {
+  await bot.waitForChunksToLoad()//chat('trollsmile loaded!')
   const files = await rreaddir('./commands/')
   const entries: [string, CommandObj][] = await Promise.all(
     files // get the file names of every command in the commands folder
@@ -43,7 +45,12 @@ bot.once('spawn', async () => {
       bot.aliases.set(alias, name)
     })
   })
-  bot.chat('trollsmile loaded!')
+  setTimeout(() => {
+    bot.setControlState('sneak', true)
+    setTimeout(() => {
+      bot.setControlState('sneak', false)
+    }, 100)
+  }, 100)
 }).loadPlugin(pathfinder)
 // Load in events
 readdirSync('./events/')
