@@ -1,13 +1,13 @@
 import Collection from '@discordjs/collection'
 import { readdirSync } from 'fs'
-import { createBot } from 'mineflayer'
+import { BotOptions, createBot } from 'mineflayer'
 import { basename } from 'path'
 import { rreaddir } from './utils/rreaddir'
 import { Bot, CommandObj } from './utils/types'
 import { pathfinder } from 'mineflayer-pathfinder'
 
 const local = true
-const options = {
+const options: BotOptions = {
   username: 'trollsmile',
   host: local ? '127.0.0.1' : 'Jack5079.aternos.me',
   port: local ? 25565 : 17397,
