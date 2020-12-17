@@ -8,7 +8,7 @@ export async function run (this: Bot, message: Message, args: string[]): Promise
     const times = Number(args.join('').replace(/\D/g, '')) || 1
     await new Promise(resolve => this.collectBlock.collect(this.findBlocks({
       matching: block => block.name === args.filter(string => !Number(string)).join('_').replace(/\d/g, '').toLowerCase() && block.diggable,
-      maxDistance: 1000,
+      maxDistance: 10000,
       count: times
     }).map(vec => this.blockAt(vec as unknown as Vec3)).filter((block): block is any => block !== null), {
       chestLocations: this.findBlocks({
