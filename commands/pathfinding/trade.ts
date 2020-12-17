@@ -2,6 +2,8 @@ import { Bot, Message } from '../../utils/types'
 import { goals, Movements } from 'mineflayer-pathfinder'
 import MinecraftData from 'minecraft-data'
 export async function run (this: Bot, message: Message): Promise<string | void> {
+  // @ts-expect-error Not in typescript definition, yet.
+  pathfinder.setGoal(null);
   if (!this.pathfinder.isMoving()) {
     const villager = this.nearestEntity(ent => ent.mobType === 'Villager')
     console.log(villager)

@@ -22,6 +22,7 @@ interface Trollsmile extends mineBot {
   pathfinder: Pathfinder
   options: BotOptions
   collectBlock: CollectBlock
+  pvp: any
 }
 export {
   Trollsmile as Bot
