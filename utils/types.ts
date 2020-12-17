@@ -1,4 +1,4 @@
-import { Bot as mineBot, Player } from 'mineflayer'
+import { Bot as mineBot, BotOptions, Player } from 'mineflayer'
 import Collection from '@discordjs/collection'
 import { Pathfinder } from 'mineflayer-pathfinder'
 
@@ -19,7 +19,7 @@ interface Trollsmile extends mineBot {
   commands: Collection<string, CommandObj>
   aliases: Collection<string, string>
   pathfinder: Pathfinder
-  hawkEye: any
+  options: BotOptions
 }
 export {
   Trollsmile as Bot

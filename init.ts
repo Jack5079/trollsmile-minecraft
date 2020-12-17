@@ -7,17 +7,20 @@ import { Bot, CommandObj } from './utils/types'
 import { pathfinder } from 'mineflayer-pathfinder'
 
 const local = true
-const bot = createBot({
+const options = {
   username: 'trollsmile',
   host: local ? '127.0.0.1' : 'Jack5079.aternos.me',
   port: local ? 25565 : 17397,
-  mainHand: 'left', // trollsmile is left handed just like me
-  viewDistance: 'far',
+  mainHand: 'left' as 'left', // trollsmile is left handed just like me
+  viewDistance: 'far' as 'far',
   logErrors: true
-}) as Bot
+}
+
+const bot = createBot(options) as Bot
 
 bot.commands = new Collection
 bot.aliases = new Collection
+bot.options = options
 bot.setMaxListeners(Infinity)
 
 bot.once('spawn', async () => {
