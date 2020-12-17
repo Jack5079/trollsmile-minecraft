@@ -2,8 +2,7 @@ import { Bot } from '../../utils/types'
 import { Vec3 } from 'vec3'
 
 export async function run (this: Bot): Promise<string | void> {
-  // @ts-expect-error Not in typescript definition, yet.
-  this.pathfinder.setGoal(null)
+
   await new Promise(resolve => this.collectBlock.cancelTask(resolve))
   if (!this.pathfinder.isMoving()) {
     await new Promise(resolve => this.collectBlock.collect(Object.values(this.entities).filter(ent => ent.objectType === 'Item'), {

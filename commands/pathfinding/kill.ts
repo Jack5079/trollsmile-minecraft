@@ -1,7 +1,6 @@
 import { Bot, Message } from '../../utils/types'
 export async function run (this: Bot, message: Message, args: string[]): Promise<string | void> {
-  // @ts-expect-error Not in typescript definition, yet.
-  this.pathfinder.setGoal(null)
+
   if (!this.pathfinder.isMoving()) {
     // this.entity.position = message.author.entity.position.offset(0, 255, 0)
     // const p = message.author.entity.position
