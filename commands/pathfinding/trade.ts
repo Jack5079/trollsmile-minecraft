@@ -28,7 +28,7 @@ export async function run (this: Bot, message: Message): Promise<string | void> 
             this.chat('villager is scamming... why would he do dat')
             // debugger
             trade.close()
-            this.chat('/kill ' + (villager as any).uuid)
+            this.pvp.attack(villager)
           }
         })
       })
