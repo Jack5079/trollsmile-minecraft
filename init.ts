@@ -9,8 +9,7 @@ import { pathfinder } from 'mineflayer-pathfinder'
 const local = true
 const options: BotOptions = {
   username: 'trollsmile',
-  host: local ? '127.0.0.1' : 'Jack5079.aternos.me',
-  port: local ? 25565 : 17397,
+  host: local ? '127.0.0.1' : 'dumbdumbpoopfart.ml',
   mainHand: 'left' as 'left', // trollsmile is left handed just like me
   viewDistance: 'far' as 'far',
   logErrors: true
