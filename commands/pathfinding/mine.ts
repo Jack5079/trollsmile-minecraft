@@ -3,7 +3,7 @@ import { Vec3 } from 'vec3'
 
 export async function run (this: Bot, message: Message, args: string[]): Promise<string | void> {
   await new Promise(resolve => this.collectBlock.cancelTask(resolve))
-
+  this.pvp.stop()
   if (!this.pathfinder.isMoving()) {
     const times = Number(args.join('').replace(/\D/g, '')) || 1
     await new Promise(resolve => this.collectBlock.collect(this.findBlocks({
