@@ -5,7 +5,6 @@ import { basename } from 'path'
 import { rreaddir } from './utils/rreaddir'
 import { Bot, CommandObj } from './utils/types'
 import { pathfinder } from 'mineflayer-pathfinder'
-import { Vec3 } from 'vec3'
 
 const local = true
 const options: BotOptions = {
@@ -17,7 +16,6 @@ const options: BotOptions = {
 }
 
 const bot = createBot(options) as Bot
-
 bot.commands = new Collection
 bot.aliases = new Collection
 bot.options = options
