@@ -1,6 +1,7 @@
 import { Bot as mineBot, BotOptions, Player } from 'mineflayer'
 import Collection from '@discordjs/collection'
 import { Pathfinder } from 'mineflayer-pathfinder'
+import { CollectBlock } from 'mineflayer-collectblock'
 
 export interface Message {
   author: Player
@@ -20,6 +21,7 @@ interface Trollsmile extends mineBot {
   aliases: Collection<string, string>
   pathfinder: Pathfinder
   options: BotOptions
+  collectBlock: CollectBlock
 }
 export {
   Trollsmile as Bot
