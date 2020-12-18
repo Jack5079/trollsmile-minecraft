@@ -1,5 +1,5 @@
 import Collection from '@discordjs/collection'
-import { readdirSync } from 'fs'
+import { readdirSync, existsSync as exists, readFileSync as readFile } from 'fs'
 import { BotOptions, createBot } from 'mineflayer'
 import { basename } from 'path'
 import { rreaddir } from './utils/rreaddir'
@@ -7,9 +7,23 @@ import { Bot, CommandObj } from './utils/types'
 import { pathfinder } from 'mineflayer-pathfinder'
 import { plugin as collectBlock } from 'mineflayer-collectblock'
 import { plugin as pvp } from 'mineflayer-pvp'
-const local = true
+
+// dotenv support
+if (exists('./.env')) {
+  Object.assign(process.env,
+    Object.fromEntries(
+      // Overwrite the env with the .env file
+      readFile('./.env', 'utf-8')
+        .split('\n') // split the file into lines
+        .filter(line => !line.startsWith('#') && line) // remove comments and spacing
+        .map(line => line.split('=')) // split the lines into key:value pairs
+    ))
+}
+
+const local = false
 const options: BotOptions = {
-  username: 'trollsmile',
+  username: local ? 'trollsmile' : 'Jack5079',
+  password: local ? undefined : process.env.PASSWORD,
   host: local ? '127.0.0.1' : 'dumbdumbpoopfart.ml',
   mainHand: 'left' as 'left', // trollsmile is left handed just like me
   viewDistance: 'far' as 'far',
@@ -21,6 +35,9 @@ bot.commands = new Collection
 bot.aliases = new Collection
 bot.options = options
 bot.setMaxListeners(Infinity)
+
+// @ts-ignore
+globalThis.trollsmile = bot // debugging
 
 bot.once('spawn', async () => {
   await bot.waitForChunksToLoad()//chat('trollsmile loaded!')

@@ -6,7 +6,7 @@ export async function run (this: Bot, message: Message, args: string[]): Promise
     // const p = message.author.entity.position
     // await this.creative.flyTo(p)
     // this.attack(message.author.entity)
-    if (args.join('').length) {
+    if (args.join('').length && args.join('') !== this.username) {
       if (this.players[args.join('_')] && this.players[args.join('_')].entity) {
         this.pvp.attack(this.players[args.join('_')].entity)
       }
