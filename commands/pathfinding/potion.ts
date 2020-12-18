@@ -4,8 +4,8 @@ import { Bot, Message } from '../../utils/types'
 async function potion (this: Bot, plr: Player) {
   const { entity: { position } } = plr
   const { x, y, z } = position
-  await new Promise<void>((resolve, reject) => this.pathfinder.goto(new goals.GoalNear(x, y, z, 2), err => err ? reject(err) : resolve()))
-  await this.lookAt(position)
+  await new Promise<void>((resolve, reject) => this.pathfinder.goto(new goals.GoalNear(x, y, z, 5), err => err ? reject(err) : resolve()))
+  await this.lookAt(position.offset(0, 1, 0))
   for (const item of this.inventory.slots.filter(Boolean).filter(item => item.name === 'splash_potion')) {
     await new Promise(r => setTimeout(r, 10))
     await this.equip(item, 'hand')

@@ -20,7 +20,7 @@ if (exists('./.env')) {
     ))
 }
 
-const local = false
+const local = true
 const options: BotOptions = {
   username: local ? 'trollsmile' : 'Jack5079',
   password: local ? undefined : process.env.PASSWORD,
