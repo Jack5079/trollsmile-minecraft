@@ -51,7 +51,7 @@ bot.once('spawn', async () => {
     }, 100)
   }, 100)
 }).loadPlugins([pathfinder, collectBlock, pvp])
-
+bot.pvp.viewDistance = 1000
 // Load in events
 readdirSync('./events/')
   .filter(name => name.endsWith('.js'))
