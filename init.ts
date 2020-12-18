@@ -50,8 +50,9 @@ bot.once('spawn', async () => {
       bot.setControlState('sneak', false)
     }, 100)
   }, 100)
+  bot.pvp.viewDistance = 1000
 }).loadPlugins([pathfinder, collectBlock, pvp])
-bot.pvp.viewDistance = 1000
+
 // Load in events
 readdirSync('./events/')
   .filter(name => name.endsWith('.js'))
