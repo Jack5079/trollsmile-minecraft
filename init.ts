@@ -20,11 +20,11 @@ if (exists('./.env')) {
     ))
 }
 
-const local = true
+const offline = true
 const options: BotOptions = {
-  username: local ? 'trollsmile' : process.env.EMAIL || '',
-  password: local ? undefined : process.env.PASSWORD,
-  host: local ? '127.0.0.1' : '123minecraft.com',
+  username: offline ? 'trollsmile' : process.env.EMAIL || '',
+  password: offline ? undefined : process.env.PASSWORD,
+  host: '127.0.0.1',
   mainHand: 'left' as 'left', // trollsmile is left handed just like me
   viewDistance: 'far' as 'far',
   logErrors: true
