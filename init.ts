@@ -7,7 +7,7 @@ import { Bot, CommandObj } from './utils/types'
 import { pathfinder } from 'mineflayer-pathfinder'
 import { plugin as collectBlock } from 'mineflayer-collectblock'
 import { plugin as pvp } from 'mineflayer-pvp'
-
+import armorManager from 'mineflayer-armor-manager'
 // dotenv support
 if (exists('./.env')) {
   Object.assign(process.env,
@@ -67,7 +67,7 @@ bot.once('spawn', async () => {
       bot.setControlState('sneak', false)
     }, 100)
   }, 100)
-}).loadPlugins([pathfinder, collectBlock, pvp])
+}).loadPlugins([pathfinder, collectBlock, pvp, armorManager])
 
 // Load in events
 readdirSync('./events/')
