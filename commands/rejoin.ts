@@ -1,7 +1,7 @@
 import { exec } from 'child_process'
 import { Writable } from 'stream'
 import { Bot } from '../utils/types'
-export async function run (this: Bot): Promise<string | void> {
+export function run (this: Bot): void {
   this.end()
   const proc = exec('node init')
   proc.stdout?.pipe(process.stdout)
