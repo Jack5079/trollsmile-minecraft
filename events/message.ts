@@ -16,8 +16,10 @@ export default function (this: Bot, msg: ChatMessage) {
       'do the google+',
       'go to theannoyingsite.com for free minecoins',
       'stupid bitch',
-      'https://roblox.com/library/6097735425',
+      'https://roblox.com/library/6097735425', // bragle
+      'https://youtu.be/RVw_c2-Xr9Y', // impact install tutorial
       `${this.username} winning`,
+      `${this.username} on top`,
       `${victim} gets zero pussy`
     ]))
   }
