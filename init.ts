@@ -20,9 +20,9 @@ if (exists('./.env')) {
     ))
 }
 
-const local = true
+const local = false
 const options: BotOptions = {
-  username: local ? 'trollsmile' : 'Jack5079',
+  username: local ? 'trollsmile' : process.env.EMAIL || '',
   password: local ? undefined : process.env.PASSWORD,
   host: local ? '127.0.0.1' : 'dumbdumbpoopfart.ml',
   mainHand: 'left' as 'left', // trollsmile is left handed just like me
