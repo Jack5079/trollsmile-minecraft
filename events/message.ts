@@ -10,7 +10,7 @@ export default function (this: Bot, msg: ChatMessage) {
       'get owned',
       'you are shit',
       'your antideath is shit skid',
-      'get gud',
+      'GET GOOD GET LMAOBOX',
       'i hate women',
       'you are Workspace.FilteringEnabled and i am roblox',
       'do the google+',
