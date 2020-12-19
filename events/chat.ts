@@ -32,6 +32,6 @@ export default async function (this: Bot, username: string, msg: string) {
 
     if (output && message.author) this.chat(output)
   } catch (err) {
-    this.chat('[ERROR] ' + err)
+    this.chat('§4[ERROR]§r ' + err)
   }
 }
