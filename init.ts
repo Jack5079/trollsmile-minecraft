@@ -21,16 +21,14 @@ if (exists('./.env')) {
 }
 
 const local = true
-const options: BotOptions = {
+const bot = createBot({
   username: local ? 'trollsmile' : process.env.EMAIL || '',
   password: local ? undefined : process.env.PASSWORD,
   host: local ? '127.0.0.1' : 'dumbdumbpoopfart.ml',
   mainHand: 'left' as 'left', // trollsmile is left handed just like me
   viewDistance: 'far' as 'far',
   logErrors: true
-}
-
-const bot = createBot(options) as Bot
+}) as Bot
 bot.commands = new Collection
 bot.aliases = new Collection
 bot.options = options
