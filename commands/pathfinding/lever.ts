@@ -9,11 +9,12 @@ export async function run (this: Bot): Promise<string | void> {
   const data = MinecraftData(this.version)
   const defaultMove = new Movements(this, data)
   this.pathfinder.setMovements(defaultMove)
-  const lever = this.findBlock({
+  const [lever] = this.findBlocks({
     matching: block => block.name === 'lever',
     maxDistance: 1000,
     count: 1
-  }) as unknown as Vec3
+  }) as unknown as Vec3[]
+
   if (lever) {
     await new Promise(resolve => this.pathfinder.goto(new goals.GoalGetToBlock(lever.x, lever.y, lever.z), resolve))
     const block = this.blockAt(lever)
