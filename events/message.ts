@@ -18,7 +18,8 @@ export default function (this: Bot, msg: ChatMessage) {
       'https://youtu.be/RVw_c2-Xr9Y', // impact install tutorial
       `${this.username} winning`,
       `${this.username} on top`,
-      `${victim} gets zero pussy`
+      `${victim} gets zero pussy`,
+      'trollar face'
     ]))
   }
 }
