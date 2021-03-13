@@ -1,4 +1,9 @@
+import { Player } from 'mineflayer'
 import { Bot, Message } from '../../utils/types'
+function kill (this: Bot, ent: Player['entity']) {
+  // maybe make it teleport to the entity?
+  this.pvp.attack(ent)
+}
 export async function run (this: Bot, message: Message, args: string[]): Promise<string | void> {
   await new Promise(resolve => this.collectBlock.cancelTask(resolve))
   this.pvp.stop()
@@ -9,11 +14,11 @@ export async function run (this: Bot, message: Message, args: string[]): Promise
     // this.attack(message.author.entity)
     if (args.join('').length && args.join('') !== this.username) {
       if (this.players[args.join('_')] && this.players[args.join('_')].entity) {
-        this.pvp.attack(this.players[args.join('_')].entity)
+        kill.call(this, this.players[args.join('_')].entity)
       }
       // Object.values(this.entities).filter(ent => ent.name === )
     } else {
-      this.pvp.attack(message.author.entity)
+      kill.call(this, message.author.entity)
     }
   } else return "Already performing a task!"
 }

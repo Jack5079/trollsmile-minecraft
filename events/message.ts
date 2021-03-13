@@ -3,6 +3,7 @@ import { Bot } from '../utils/types'
 const random = <Type> (arr: Type[]): Type => arr[Math.floor(Math.random() * arr.length)]
 
 export default function (this: Bot, msg: ChatMessage) {
+  console.log(msg.toAnsi())
   if (msg.with && msg.with[1] && msg.with[1].text === this.username) {
     const victim = msg.with[0].text
     this.chat(random([
