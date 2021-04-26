@@ -8,7 +8,6 @@ import { pathfinder } from 'mineflayer-pathfinder'
 import { plugin as collectBlock } from 'mineflayer-collectblock'
 import { plugin as pvp } from 'mineflayer-pvp'
 import armorManager from 'mineflayer-armor-manager'
-
 // dotenv support
 if (exists('./.env')) {
   Object.assign(process.env,
@@ -23,11 +22,12 @@ if (exists('./.env')) {
 
 const offline = true
 const options: BotOptions = {
-  username: offline ? 'trollsmile' : process.env.EMAIL || '',
+  username: offline ? 'trollsmile' + Math.random().toString()[3] + Math.random().toString()[3] : process.env.EMAIL || '',
   password: offline ? undefined : process.env.PASSWORD,
   host: '127.0.0.1',
-  mainHand: 'left' as 'left', // trollsmile is left handed just like me
-  viewDistance: 'far' as 'far',
+  port: 64200,
+  mainHand: 'left', // trollsmile is left handed just like me
+  viewDistance: 'far',
   logErrors: true
 }
 
