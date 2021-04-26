@@ -16,7 +16,7 @@ export async function run (this: Bot, message: Message, args: string[]): Promise
     append: true
   }, resolve))
 
-  return 'done you stupid bitch'
+  return 'Done!'
 }
 export const help = 'steals an item'
 export const aliases = ['get']

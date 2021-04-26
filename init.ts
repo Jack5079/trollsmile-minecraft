@@ -22,10 +22,12 @@ if (exists('./.env')) {
 
 const offline = true
 const options: BotOptions = {
-  username: offline ? 'trollsmile' + Math.random().toString()[3] + Math.random().toString()[3] : process.env.EMAIL || '',
+  username: offline
+    ? 'trollsmile' + Math.random().toString()[3] + Math.random().toString()[3]
+    : process.env.EMAIL || '',
   password: offline ? undefined : process.env.PASSWORD,
-  host: '127.0.0.1',
-  port: 64200,
+  host: '95.111.249.143',
+  port: 10000,
   mainHand: 'left', // trollsmile is left handed just like me
   viewDistance: 'far',
   logErrors: true
