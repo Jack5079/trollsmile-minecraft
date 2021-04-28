@@ -13,7 +13,7 @@ export async function run (this: Bot): Promise<string | void> {
       }) as unknown as Vec3[],
       append: true
     }, resolve))
-    return 'Done!'
+    return 'done you lazy ass'
   } else throw "Already performing a task!"
 }
 export const help = 'steals items on the ground'
